@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Services We Provide</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fffdfd;
+      color: #4a004a;
+      margin: 0;
+      padding: 0;
+    }
+
+    .services-section {
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .services-section h2 {
+      font-size: 2rem;
+      font-weight: bold;
+      background: linear-gradient(to right, #b10063, #ffcc00);
+      -webkit-background-clip: text;
+      color: transparent;
+      margin-bottom: 40px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 40px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .service-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 10px;
+    }
+
+    .service-item img {
+  width: 90px;     /* Increased from 50px */
+  height: 90px;    /* Increased from 50px */
+  margin-bottom: 15px;
+  object-fit: contain;
+  filter: hue-rotate(280deg);
+}
+
+
+    .service-item h3 {
+      font-size: 1rem;
+      font-weight: bold;
+      color: #800040;
+      margin-bottom: 10px;
+    }
+
+    .service-item p {
+      font-size: 0.95rem;
+      color: #6e2c6e;
+      line-height: 1.5;
+      max-width: 220px;
+    }
+
+    @media (max-width: 600px) {
+      .services-section h2 {
+        font-size: 1.5rem;
+      }
+
+      .service-item p {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="services-section">
+    <h2>Services we <strong style="color: #ffcc00;">Provide</strong></h2>
+    <div class="services-grid">
+      <div class="service-item">
+        <img src="Screenshot 2025-05-05 215621.png" alt="Concept Planning" />
+        <h3>Concept Planning</h3>
+        <p>Share your ideas, choose a theme and set the foundation.</p>
+      </div>
+      <div class="service-item">
+        <img src="Screenshot 2025-05-05 215630.png" alt="Venue Selection" />
+        <h3>Venue Selection</h3>
+        <p>Find out the right space within your budget.</p>
+      </div>
+      <div class="service-item">
+        <img src="Screenshot 2025-05-05 215726.png" alt="Logistic Support" />
+        <h3>Logistic Support</h3>
+        <p>We handle all the logistics, ensuring seamless support for your event.</p>
+      </div>
+      <div class="service-item">
+        <img src="Screenshot 2025-05-05 215729.png" alt="Decoration" />
+        <h3>Decoration</h3>
+        <p>Creative and attractive quality decor matching with your theme and event.</p>
+      </div>
+      <div class="service-item">
+        <img src="Screenshot 2025-05-05 215646.png" alt="Food & Beverage" />
+        <h3>Food & Beverage</h3>
+        <p>Delicious culinary experience with diverse range of cuisines for both buffet and à la carte.</p>
+      </div>
+      <div class="service-item">
+        <img src="Screenshot 2025-05-05 215651.png" alt="Entertainment" />
+        <h3>Entertainment</h3>
+        <p>From DJs and traditional performance to engaging fun activities we have it all.</p>
+      </div>
+      <div class="service-item">
+        <img src="Screenshot 2025-05-05 215656.png" alt="Photography/ Videography" />
+        <h3>Photography/ Videography</h3>
+        <p>High quality traditional and modern shots are taken to cover the entire event.</p>
+      </div>
+    
+    </div>
+  </section>
+</body>
+</html>

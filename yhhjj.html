@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AP Event Booking</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: url('wp7488366.webp') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.6);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .booking-form {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 40px 30px;
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      width: 90%;
+      max-width: 600px;
+      color: white;
+    }
+
+    .booking-form h2 {
+      text-align: center;
+      font-size: 28px;
+      margin-bottom: 30px;
+      font-weight: bold;
+    }
+
+    .booking-form input,
+    .booking-form textarea,
+     .booking-form select {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 30px;
+      background-color: rgba(255, 255, 255, 0.2);
+      color: white;
+    }
+    .booking-form input::placeholder {
+  color: white;
+}
+
+.booking-form textarea::placeholder {
+  color: white;
+}
+
+    .booking-form input::placeholder,
+.booking-form textarea::placeholder
+.booking-form select::placeholder {
+  color: #ddd;
+    }
+.booking-form select {
+ 
+  color: white;
+  appearance: none; /* Optional: for cleaner styling */
+}
+
+.booking-form option {
+  background-color:  rgba(0, 0, 0, 0.6);
+  color: white;
+}
+
+    .booking-form button {
+      width: 100%;
+      padding: 15px;
+      background-color: #ff6600;
+      border: none;
+      border-radius: 30px;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .booking-form button:hover {
+      background-color: #e05500;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="overlay">
+    <form class="booking-form" id="eventForm">
+      <h2>Book Your AP Event</h2>
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="tel" name="phone" placeholder="Phone Number" required>
+      <textarea name="address" placeholder="Your Address" rows="2" required></textarea>
+  <select name="event" placeholder="Event Name" required>
+    <option value="" disabled selected>Select Event Type</option>
+    <option value="Marriage">Marriage</option>
+    <option value="Engagement">Engagement</option>
+    <option value="Roce">Roce</option>
+    <option value="Mehendhi">Mehendhi</option>
+    <option value="Haldhi">Haldhi</option>
+    <option value="Reception">Reception</option>
+    <option value="Baby Shower">Baby Shower</option>
+    <option value="Birthday Celebration">Birthday Celebration</option>
+    <option value="Wedding Anniversary">Wedding Anniversary</option>
+    <option value="Other">Other</option>
+  </select>
+
+  <input type="date" name="eventDate" required>
+  <button type="submit">BOOK NOW</button>
+</form>
+
+  </div>
+<script>
+  document.getElementById('eventForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const form = this;
+    const name = form.name.value.trim();
+    const phone = form.phone.value.trim();
+    const eventDate = new Date(form.eventDate.value);
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    eventDate.setHours(0, 0, 0, 0);
+
+    if (!/^[A-Za-z\s]+$/.test(name)) {
+      alert("Please enter a valid name (letters only).");
+      return;
+    }
+
+    if (!/^\d{10}$/.test(phone)) {
+      alert("Please enter a valid 10-digit phone number.");
+      return;
+    }
+
+    if (eventDate < today) {
+      alert("Event date must be today or a future date.");
+      return;
+    }
+
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+
+    fetch('http://localhost:5000/api/book', { // Make sure to use full URL
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    })
+    .then(res => {
+      if (!res.ok) throw new Error("Network response was not ok");
+      return res.text();
+    })
+    .then(msg => {
+      alert(msg || "Event booked successfully!");
+      form.reset();
+    })
+    .catch(err => {
+      console.error("Booking failed:", err);
+      alert("Failed to book event.");
+    });
+  });
+
+  document.getElementById('eventForm').eventDate.min = new Date().toISOString().split("T")[0];
+</script>
+
+</body>
+</html>

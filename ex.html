@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corporate & Social Events</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f0f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+            color: #5e005e;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 40px;
+        }
+
+        .left, .right {
+            flex: 1;
+            text-align: center;
+        }
+
+        .corporate, .social {
+            font-size: 36px;
+            font-weight: bold;
+            color: #8a2be2;
+        }
+
+        .events {
+            font-size: 36px;
+            font-weight: bold;
+            text-decoration: underline;
+            color: #d32f2f;
+        }
+
+        .title {
+            font-size: 28px;
+            background: linear-gradient(to right, red, yellow);
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: 20px;
+        }
+
+        .word-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            padding: 20px;
+        }
+
+        .word {
+            font-size: 18px;
+            font-weight: bold;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        /* Color styling for word blocks */
+        .word:nth-child(1) { background-color: #ff6347; color: white; }
+        .word:nth-child(2) { background-color: #000; color: white; }
+        .word:nth-child(3) { background-color: #8a2be2; color: white; }
+        .word:nth-child(4) { background-color: #ffa500; color: black; }
+        .word:nth-child(5) { background-color: #dda0dd; color: black; }
+        .word:nth-child(6) { background-color: #00bfff; color: white; }
+        .word:nth-child(7) { background-color: #ff69b4; color: white; }
+        .word:nth-child(8) { background-color: #32cd32; color: black; }
+        .word:nth-child(9) { background-color: #ff4500; color: white; }
+        .word:nth-child(10) { background-color: #00fa9a; color: black; }
+        .word:nth-child(11) { background-color: #8b0000; color: white; }
+        .word:nth-child(12) { background-color: #20b2aa; color: white; }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="left">
+            <h1 class="corporate">Corporate</h1>
+            <h2 class="events">Events</h2>
+            <h3 class="title">What We Do</h3>
+            <div class="word-cloud">
+                <span class="word">Seminar</span>
+                <span class="word">Inauguration</span>
+                <span class="word">Team Outing</span>
+                <span class="word">Networking</span>
+                <span class="word">Conference</span>
+                <span class="word">Family Day</span>
+                <span class="word">Annual Day</span>
+                <span class="word">CSR</span>
+                <span class="word">Award Ceremony</span>
+                <span class="word">Product Launch</span>
+                <span class="word">Cultural Day</span>
+                <span class="word">Training</span>
+            </div>
+        </div>
+
+        <div class="right">
+            <h1 class="social">Social</h1>
+            <h2 class="events">Events</h2>
+            <h3 class="title">Services We Provide</h3>
+            <div class="word-cloud">
+                <span class="word">Baby Shower</span>
+                <span class="word">Engagement</span>
+                <span class="word">Wedding</span>
+                <span class="word">Birthday</span>
+                <span class="word">Sangeet</span>
+                <span class="word">Bachelorette</span>
+                <span class="word">House Warming</span>
+                <span class="word">Haldi</span>
+                <span class="word">Naming Ceremony</span>
+                <span class="word">Reception</span>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
